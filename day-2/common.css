@@ -1,0 +1,11 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+    font-size: 28px;
+  
+}
+a{
+    text-decoration: none;
+    color: white;
+}

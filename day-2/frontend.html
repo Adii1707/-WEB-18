@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+    <link rel="stylesheet" href="common.css">
+   
+    <style>
+         #container{
+              display: grid;
+              grid-template-columns: repeat(2,1fr);
+              grid-template-rows: repeat(1,auto);
+              gap: 30px;
+}
+    </style>
+   
+</head>
+<body>
+
+   <h1>Frontend</h1>
+   <div id="container"></div>
+</body>
+</html>
+
+<script>
+             var investorarr = JSON.parse(localStorage.getItem("investordata"));
+            console.log(investorarr)
+
+            investorarr.map(function(el){
+                            var box = document.createElement("div")
+                           var Ipic = document.createElement("img");
+                           Ipic.setAttribute("src",el.invstimg);
+                           var Iname = document.createElement("h3");
+                           Iname.innerText = el.invstname;
+                           var Irole = document.createElement("p");
+                           Irole.innerText = el.invstrole;
+                           var Ilogo = document.createElement("img");
+                           Ilogo.setAttribute("src",el.invstlogo)
+                            box.append(Ipic,Iname,Irole,Ilogo)
+                            document.querySelector("#container").append(box)
+                        })
+
+
+</script>
